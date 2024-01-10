@@ -15,7 +15,7 @@ const set = async (data)=> {
 }
 
 // TODO: Handle deep objects.
-export const startStore = async (initialState={}, migrationFuncs=[])=> {
+export const startStore = async (defaultState={}, migrationFuncs=[])=> {
 
     // TODO: Handle migrations properly.
     // if (migrationFuncs.length) {
@@ -26,7 +26,7 @@ export const startStore = async (initialState={}, migrationFuncs=[])=> {
     //     })
     // }
     const prevState = await get()
-    await set( Object.assign(initialState, prevState) )
+    await set( Object.assign(defaultState, prevState) )
     let prevHandler
 
     return {

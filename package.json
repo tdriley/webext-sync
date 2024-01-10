@@ -2,8 +2,13 @@
   "name": "webext-sync",
   "version": "0.0.1",
   "description": "Sync data between an MV3 web extension's background, popup, options and content scripts.",
-  "main": "index.js",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
   "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/tdriley/webext-sync/issues"
   },
-  "homepage": "https://github.com/tdriley/webext-sync#readme"
+  "homepage": "https://github.com/tdriley/webext-sync#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
 }
