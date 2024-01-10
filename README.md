@@ -2,9 +2,11 @@
 Sync data between an MV3 web extension's background, popup, options and content scripts.
 
 ## Usage
-First install as a project dependency: `npm install git@github.com:tdriley/webext-sync.git --save`
+First install as a project dependency: 
 
-In the extension's background script, define the default state and set it up to set and receive changes:
+```npm install git@github.com:tdriley/webext-sync.git --save```
+
+In the extension's background script, define the default state and set it up to store and receive changes:
 
 ```javascript
 // background.js
@@ -30,7 +32,7 @@ startStore(defaultState).then(async store=> {
 })
 ```
 
-In any other extension parts, set them up to set and receive changes:
+In any other extension parts, set them up to store and receive changes:
 
 ```javascript
 // popup.js, options.js, or content scripts
