@@ -46,7 +46,7 @@ startStore().then(async store=> {
         state = newState
     })
 
-    console.log('Other extension part loaded! state:', state)
+    console.log('Popup loaded! state:', state)
 
     store.set({ timesPopupOpened: state.timesPopupOpened+1 })
 })
