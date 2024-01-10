@@ -1,6 +1,6 @@
 {
   "name": "webext-sync",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sync data between an MV3 web extension's background, popup, options and content scripts.",
   "source": "src/index.js",
   "main": "dist/main.js",
