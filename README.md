@@ -32,7 +32,7 @@ startStore(defaultState).then(async store=> {
 })
 ```
 
-Popup, options or content scripts, can then be set up to store and receive changes:
+Popup, options or content scripts can then be set up to store and receive changes:
 
 ```javascript
 // popup.js
