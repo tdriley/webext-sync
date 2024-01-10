@@ -12,7 +12,7 @@ First install as a project dependency:
 
 Make sure your extension's `manifest.json` asks for the `storage` permission:
 
-```json
+```
 // manifest.json
 
 "permissions": [
