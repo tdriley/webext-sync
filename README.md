@@ -32,10 +32,10 @@ startStore(defaultState).then(async store=> {
 })
 ```
 
-In any other extension parts, set them up to store and receive changes:
+Popup, options or content scripts, can then be set up to store and receive changes:
 
 ```javascript
-// popup.js, options.js, or content scripts
+// popup.js
 
 import { startStore } from "webext-sync"
 
