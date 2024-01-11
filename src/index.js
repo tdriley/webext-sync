@@ -15,7 +15,7 @@ const set = async (data)=> {
 }
 
 // TODO: Handle deep objects.
-export const startStore = async (defaultState={}, migrationFuncs=[])=> {
+export const startSyncStore = async (defaultState={}, migrationFuncs=[])=> {
 
     // TODO: Handle migrations properly.
     // if (migrationFuncs.length) {
@@ -46,7 +46,7 @@ export const startStore = async (defaultState={}, migrationFuncs=[])=> {
             prevHandler = handler
             browser.storage.onChanged.addListener(handler)
         },
-        get: get,
-        set: set
+        getState: get,
+        setState: set
     }
 }

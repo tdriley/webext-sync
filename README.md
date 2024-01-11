@@ -25,17 +25,17 @@ In the extension's background script, define the default state and set it up to 
 ```javascript
 // background.js
 
-import { startStore } from "webext-sync"
+import { startSyncStore } from "webext-sync"
 
 const defaultState = {
     storeVersion: 1, // Not required, but it is probably a good idea to version your store
     timesPopupOpened: 0 
 }
 
-startStore(defaultState).then(async store=> {
-    let state = await store.get()
+startSyncStore(defaultState).then(async syncStore=> {
+    let state = await syncStore.getState()
 
-    store.onChange((newState, prevState)=> {
+    syncStore.onChange((newState, prevState)=> {
         // Handle state updates here
         state = newState
 
@@ -51,17 +51,17 @@ Popup, options or content scripts can then be set up to store and receive change
 ```javascript
 // popup.js
 
-import { startStore } from "webext-sync"
+import { startSyncStore } from "webext-sync"
 
-startStore().then(async store=> {
-    let state = await store.get()
-    store.onChange((newState, prevState)=> {
+startSyncStore().then(async syncStore=> {
+    let state = await syncStore.getState()
+    syncStore.onChange((newState, prevState)=> {
         // Handle state updates here.
         state = newState
     })
 
     console.log('Popup loaded! state:', state)
 
-    store.set({ timesPopupOpened: state.timesPopupOpened+1 })
+    syncStore.setState({ timesPopupOpened: state.timesPopupOpened+1 })
 })
 ```
