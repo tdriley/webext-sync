@@ -4,8 +4,9 @@
 name: NPM Publish
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*.*.*"
   # Allow to be run manually.  
   workflow_dispatch:
 
