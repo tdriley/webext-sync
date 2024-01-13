@@ -6,6 +6,8 @@ name: webext-sync
 on:
   release:
     types: [created]
+  # Also allow to be run manually.  
+  workflow_dispatch:
 
 jobs:
   build:
