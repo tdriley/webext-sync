@@ -8,11 +8,11 @@ Coming soon:
 ## Usage
 First install as a project dependency: 
 
-```npm install git@github.com:tdriley/webext-sync.git --save```
+```npm install webext-sync --save```
 
 Make sure your extension's `manifest.json` asks for the `storage` permission:
 
-```
+```javascript
 // manifest.json
 
 "permissions": [
