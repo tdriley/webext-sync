@@ -25,6 +25,7 @@ export const startSyncStore = async (defaultState={}, migrationFuncs=[])=> {
     //         migratedState = Object.assign(prevState, fn(prevState))
     //     })
     // }
+    
     const prevState = await get()
     await set( Object.assign(defaultState, prevState) )
     let prevHandler
