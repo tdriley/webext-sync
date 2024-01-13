@@ -1,0 +1,36 @@
+## "Angular"-type commit messages prefixed with a type, like "feat(scope): Adding new awesome feature."
+## Types:
+# feat: A new feature
+# fix: A bug fix
+# docs: Documentation only changes
+# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# refactor: A code change that neither fixes a bug nor adds a feature
+# perf: A code change that improves performance
+# test: Adding missing or correcting existing tests
+# chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
+# Also, "BREAKING CHANGE: This requires a major release."
+
+# https://github.com/anothrNick/github-tag-action
+
+name: Bump Version & Tag
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
+        WITH_V: true
+          
