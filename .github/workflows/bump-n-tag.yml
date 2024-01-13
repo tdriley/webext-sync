@@ -1,6 +1,7 @@
 # https://github.com/anothrNick/github-tag-action
 
 name: Bump Version & Tag
+
 on:
   push:
     branches:
