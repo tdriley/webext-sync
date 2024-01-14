@@ -1,10 +1,6 @@
 # webext-sync
 Sync data between an MV3 web extension's background, popup, options and content scripts. The data will persist across extension restarts and the background service worker stopping/starting does not affect functionality.
 
-Coming soon:
- - Support for nested data
- - Support for defining migration funcs for when the extension is updated
-
 ## Usage
 First install as a project dependency: 
 
@@ -20,7 +16,7 @@ Make sure your extension's `manifest.json` asks for the `storage` permission:
 ],
 ```
 
-In the extension's background script, define the default state and set it up to store and receive changes:
+In the extension's background script, define the default state and set it up to store and receive changes. Note: If you ever want to change the data's schema in newer versions of your extension, you can define a new `defaultState` and any existing data will be deep-merged with the new schema.
 
 ```javascript
 // background.js

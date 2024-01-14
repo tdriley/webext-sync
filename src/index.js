@@ -5,10 +5,8 @@ if (!('browser' in self)) self.browser = self.chrome
 const localStorage = browser.storage.local
 
 const get = async (key)=> {
-    // TODO: Handle deep keys.
-    // TODO: make sure it returns a blank object by default.
     const state = await (!key || !key.length) ? localStorage.get(null) : localStorage.get(key)
-    return state
+    return state || {}
 }
 
 const set = async (data)=> {
@@ -16,18 +14,7 @@ const set = async (data)=> {
     return data
 }
 
-// TODO: Handle deep objects.
-export const startSyncStore = async (defaultState={}, migrationFuncs=[])=> {
-
-    // TODO: Handle migrations properly.
-    // if (migrationFuncs.length) {
-    //     const prevState = await get()
-    //     let migratedState = {}
-    //     migrationFuncs.forEach(fn=> {
-    //         migratedState = merge(prevState, fn(prevState))
-    //     })
-    // }
-    
+export const startSyncStore = async (defaultState={})=> {    
     const prevState = await get()
     await set( merge(defaultState, prevState) )
     let prevHandler
