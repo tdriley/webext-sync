@@ -1,5 +1,7 @@
 # webext-sync
-Sync data between an MV3 web extension's background, popup, options and content scripts. The data will persist across extension restarts and the background service worker stopping/starting does not affect functionality.
+Sync data between a web extension's background, popup, options and content scripts. The data will persist across extension restarts and the background service worker stopping/starting does not affect functionality. Works cross-browser, with MV2 and MV3.
+
+Please submit any issues or feature requests at [https://github.com/tdriley/webext-sync/issues](https://github.com/tdriley/webext-sync/issues)
 
 ## Usage
 First install as a project dependency: 
@@ -32,7 +34,8 @@ startSyncStore(defaultState).then(async syncStore=> {
     let state = await syncStore.getState()
 
     syncStore.onChange((newState, prevState)=> {
-        // Handle state updates here
+        // Handle state updates here.
+        // If you are using a state store like Redux, you could do something like reduxStore.dispatch({ type: "STORE_UPDATE", newState: newState })
         state = newState
 
         console.log('Times popup opened:', state.timesPopupOpened)
@@ -53,6 +56,7 @@ startSyncStore().then(async syncStore=> {
     let state = await syncStore.getState()
     syncStore.onChange((newState, prevState)=> {
         // Handle state updates here.
+        // If you are using a state store like Redux, you could do something like reduxStore.dispatch({ type: "STORE_UPDATE", newState: newState })
         state = newState
     })
 
