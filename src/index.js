@@ -1,3 +1,5 @@
+import { merge } from "lodash.merge"
+
 if (!('browser' in self)) self.browser = self.chrome
 
 const localStorage = browser.storage.local
@@ -22,12 +24,12 @@ export const startSyncStore = async (defaultState={}, migrationFuncs=[])=> {
     //     const prevState = await get()
     //     let migratedState = {}
     //     migrationFuncs.forEach(fn=> {
-    //         migratedState = Object.assign(prevState, fn(prevState))
+    //         migratedState = merge(prevState, fn(prevState))
     //     })
     // }
     
     const prevState = await get()
-    await set( Object.assign(defaultState, prevState) )
+    await set( merge(defaultState, prevState) )
     let prevHandler
 
     return {

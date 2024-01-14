@@ -23,5 +23,8 @@
   "homepage": "https://github.com/tdriley/webext-sync#readme",
   "devDependencies": {
     "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "lodash.merge": "^4.6.2"
   }
 }
