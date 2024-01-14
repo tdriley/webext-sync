@@ -1,5 +1,5 @@
 # webext-sync
-Sync data between a web extension's background, popup, options and content scripts. The data will persist across extension restarts and the background service worker stopping/starting does not affect functionality. Works cross-browser, with MV2 and MV3.
+Sync data between a web extension's background, popup, options and content scripts. The data will persist across extension restarts and the background service worker stopping/starting does not affect functionality. Works cross-browser, with MV3 and MV2.
 
 Please submit any issues or feature requests at [https://github.com/tdriley/webext-sync/issues](https://github.com/tdriley/webext-sync/issues)
 
