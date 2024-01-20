@@ -11,6 +11,7 @@
     "sync",
     "state",
     "store",
+    "data",
     "chrome",
     "firefox",
     "manifest-v3",
@@ -32,7 +33,7 @@
     "type": "git",
     "url": "git+https://github.com/tdriley/webext-sync.git"
   },
-  "author": "tdriley@gmail.com",
+  "author": "Tom Riley <tdriley@gmail.com> (https://tomriley.net/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tdriley/webext-sync/issues"
