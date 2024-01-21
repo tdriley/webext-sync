@@ -1,4 +1,4 @@
-import { merge } from "lodash.merge"
+import merge from "lodash.merge"
 
 if (!('browser' in self)) self.browser = self.chrome
 
