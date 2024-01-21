@@ -19,7 +19,6 @@
     "mv3",
     "mv2"
   ],
-  "type": "module",
   "source": "src/index.js",
   "main": "dist/main.js",
   "module": "dist/module.js",
