@@ -1,6 +1,6 @@
 {
   "name": "webext-sync",
-  "version": "1.0.12",
+  "version": "2.0.0",
   "description": "Sync data between a web extension's background, popup, options and content scripts. Works cross-browser, with MV3 and MV2.",
   "keywords": [
     "browser",
